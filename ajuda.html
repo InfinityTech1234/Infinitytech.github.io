@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity tech</title>
+    <link rel="icon" type="imagem.png" href="Colorful Modern Infinity Technology Free Logo.png">
+    <style>
+        body {
+            background: linear-gradient(to right, #000, #048beba9, #048beba9);
+            font-family: Arial, sans-serif;
+        }
+
+        .logo img {
+            width: 300px;
+        }
+
+        .perfil {
+            position: absolute;
+            left: 1700px;
+            top: 80px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+
+        #nav-test {
+            background: transparent;
+            margin-left: -1590px;
+            margin-top: -120px;
+            font-size: 20px;
+            font-family: 'calibri';
+        }
+
+        #nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .nav-li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        .nav-li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-li a:hover {
+            background-color: #004c99ac;
+        }
+
+        .active-nav a {
+            background-color: #004c99ac;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        .titulo1 {
+            position: absolute;
+            top: 120px;
+            left: 600px;
+            font-size: 90px;
+            font-family: 'calibri';
+            color: rgb(240, 240, 240);
+        }
+
+        .card {
+            width: 800px;
+            margin-left: -1140px;
+            margin-top: 300px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            background-color: #444c85;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        .chat-window {
+            height: 220px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+
+        .message-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .message {
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 8px;
+            margin-bottom: 5px;
+            margin: 20px;
+        }
+
+        .message.sender {
+            background-color: #004c99ac;
+            color: #fff;
+            margin: left;
+
+        }
+
+        .message.bot {
+            background-color: #008000a6;
+            color: #fff;
+            margin: right;
+
+        }
+
+        .message-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-size: 14px;
+            width: 700px;
+        }
+
+        .send-button {
+            border: none;
+            outline: none;
+            background-color: #444c85;
+            color: #fff;
+            font-size: 14px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .titulo {
+            position: absolute;
+            margin-left: -1030px;
+            margin-top: 20px;
+            font-size: 40px;
+            font-family: 'calibri';
+            color: rgb(240, 240, 240);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <a href="pagina-principal.html">
+            <img src="logo1.png" alt="logo">
+        </a>
+    </div>
+    <div class="perfil">
+        <a href="index.html">
+            <img src="perfil.png" width="70px">
+        </a>
+        <section id="nav-test">
+            <div id="nav-container">
+                <ul>
+                    <li class="nav-li"><a href="pagina-principal.html">Inicio</a></li>
+                    <li class="nav-li "><a href="inicio.html">Produtos</a></li>
+                    <li class="nav-li"><a href="sobre.html">Sobre</a></li>
+                    <li class="nav-li active-nav"><a>Ajuda</a></li>
+                </ul>
+                <div id="line"></div>
+            </div>
+        </section>
+        <div class="titulo">
+            <h1>Precisa de ajuda?</h1>
+        </div>
+        <div class="card">
+            <div class="chat-header">Fale com nosso Infinity-bot</div>
+            <div class="chat-window">
+                <ul class="message-list"></ul>
+            </div>
+            <div class="chat-input">
+                <input type="text" class="message-input" placeholder="Digite sua dúvida">
+                <button class="send-button" onclick="sendMessage()">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array de perguntas e respostas
+        const faq = [
+            { question: "Qual é o horário de entrega?", answer: "Nosso horário de entrega é de segunda a sexta, das 9h às 18h." },
+            { question: "Como faço para devolver um produto?", answer: "Para devolver um produto, basta entrar em contato conosco através do nosso e-mail de suporte InfinityTech12123@gmail.com." },
+            { question: "Como obtenho um reembolso por pagamento feito via Pix?", answer: "Entre em contato conosco através do nosso canal de suporte ao cliente, fornecendo os detalhes da transação, como o valor, a data e a identificação da transação." },
+            { question: "O que devo fazer se não receber um pedido, mas o status está como entregue?", answer: "Entre em contato imediatamente com a transportadora responsável pela entrega e forneça o número do seu pedido para obter informações detalhadas sobre a entrega. Se a transportadora não puder resolver o problema, entre em contato conosco para que possamos investigar e resolver a situação." },
+            // Adicione mais perguntas e respostas conforme necessário
+        ];
+
+        // Função para enviar uma mensagem
+        function sendMessage() {
+            const input = document.querySelector('.message-input');
+            const message = input.value.trim();
+
+            if (message !== '') {
+                addMessage('Você', message, false); // Adiciona a mensagem do usuário
+                input.value = '';
+
+                // Verifica se a mensagem é uma pergunta conhecida
+                const answer = faq.find(item => item.question.toLowerCase() === message.toLowerCase());
+
+                if (answer) {
+                    setTimeout(() => {
+                        addMessage('Infinity-bot', answer.answer, true); // Adiciona a resposta do bot
+                    }, 500);
+                } else {
+                    setTimeout(() => {
+                        addMessage('Infinity-bot', 'Desculpe, não entendi sua pergunta.', false);
+                    }, 500);
+                }
+            }
+        }
+
+        // Função para adicionar uma mensagem à lista
+        function addMessage(sender, message, isResponse) {
+            const messageList = document.querySelector('.message-list');
+            const li = document.createElement('li');
+            li.classList.add('message');
+
+            if (isResponse) {
+                li.classList.add('bot'); // Adiciona a classe 'bot' para a mensagem do bot
+            } else {
+                li.classList.add('sender'); // Adiciona a classe 'sender' para a mensagem do usuário
+            }
+
+            li.textContent = `${sender}: ${message}`;
+
+            // Adiciona a mensagem no início da lista para as respostas do bot
+            if (isResponse) {
+                messageList.insertBefore(li, messageList.firstChild);
+            } else {
+                messageList.appendChild(li); // Adiciona a mensagem no final da lista para as mensagens do usuário
+            }
+
+            messageList.scrollTop = messageList.scrollHeight;
+        }
+
+        // Event listener para enviar mensagem ao pressionar Enter
+        document.querySelector('.message-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+
+</html>

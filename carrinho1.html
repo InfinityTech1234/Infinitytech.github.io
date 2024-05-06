@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity tech</title>
+    <link rel="icon" type="image/png" href="Colorful Modern Infinity Technology Free Logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Font Awesome para os ícones -->
+    <style>
+        body {
+            background: linear-gradient(to right, #000, #048beba9, #048beba9);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 50px auto;
+            margin-top: -50px;
+            margin-left: 500px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            width: 300px;
+        }
+
+        .carrinho {
+            position: absolute;
+            width: 200px;
+            left: 1570px;
+            top: 95px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 45px;
+        }
+
+        .carrinho-icon {
+            margin-right: 5px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            z-index: 9998;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease;
+        }
+
+        .cart-sidebar-content {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .close-btn {
+            font-size: 30px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .close-btn:hover {
+            color: red;
+        }
+
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cart-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-name {
+            font-weight: bold;
+        }
+
+        .product-price {
+            color: #888;
+        }
+
+        .remove-item-btn {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-item-btn:hover {
+            background-color: #cc0000;
+        }
+
+        .cart-total {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .cart-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-buttons button {
+            padding: 10px 20px;
+            background-color: #048beba9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-buttons button:hover {
+            background-color: #048beb;
+        }
+
+        .buy-btn,
+        .cart-btn {
+            padding: 10px 20px;
+            background-color: #048beba9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-btn:hover,
+        .cart-btn:hover {
+            background-color: #048beb;
+        }
+
+        .product-description1 {
+            font-weight: bold;
+            font-size: 26px;
+            font-family: 'calibri';
+        }
+
+        .carrinho a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <a href="pagina-principal.html">
+            <img src="logo1.png" alt="logo">
+        </a>
+    </div>
+
+    <div class="carrinho">
+        <a href="#" onclick="openCart()">
+            <i class="fas fa-shopping-cart carrinho-icon"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="product-image">
+            <img src="teclado1.png" alt="Headset Gamer" width="540px">
+        </div>
+        <div class="product-details">
+            <h2 class="product-title">Teclado Logitech g213</h2>
+            <p class="product-description">Layout ABNT2, RGB LIGHTSYNC, Controles de Mídia Dedicados, Design Durável e
+                Resistente à Respingos</p>
+            <p class="product-description1">R$371,00</p>
+            <div class="favorito">
+                <img src="favoritos.png" alt="">
+            </div>
+            <br>
+            <button class="buy-btn">Comprar</button>
+            <button class="cart-btn" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
+    <!-- Carrinho lateral -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-sidebar-content">
+            <span class="close-btn" onclick="closeCart()">×</span>
+            <h2>Carrinho</h2>
+            <ul id="cart-items" class="cart-items">
+                <!-- Itens do carrinho serão inseridos aqui dinamicamente -->
+            </ul>
+            <div class="cart-total">
+                <span>Total: </span><span id="cart-total">R$0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button onclick="clearCart()">Limpar Carrinho</button>
+                <button onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+
+            // Armazenar as informações do produto no armazenamento local
+            let product = {
+                name: "Teclado Logitech g213",
+                description: "Layout ABNT2, RGB LIGHTSYNC, Controles de Mídia Dedicados, Design Durável e Resistente à Respingos",
+                price: 371.90
+            };
+
+            // Verificar se já existe algum produto no carrinho no armazenamento local
+            let productsInCart = JSON.parse(localStorage.getItem('cart')) || [];
+            productsInCart.push(product);
+            localStorage.setItem('cart', JSON.stringify(productsInCart));
+
+            // Atualizar o carrinho na barra lateral
+            updateCartSidebar();
+        }
+
+        function updateCartSidebar() {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItemsList = document.getElementById('cart-items');
+            let total = 0;
+
+            cartItemsList.innerHTML = '';
+
+            cartItems.forEach((item, index) => {
+                let li = document.createElement('li');
+                li.className = 'cart-item';
+                li.innerHTML = `
+                    <div class="cart-item-info">
+                        <span class="product-name">${item.name}</span>
+                        <span class="product-price">R$${item.price.toFixed(2)}</span>
+                    </div>
+                    <button class="remove-item-btn" onclick="removeItem(${index})">Remover</button>
+                `;
+                cartItemsList.appendChild(li);
+                total += item.price;
+            });
+
+            document.getElementById('cart-total').textContent = `R$${total.toFixed(2)}`;
+        }
+
+        function removeItem(index) {
+            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCartSidebar();
+        }
+
+        function openCart() {
+            document.getElementById('cart-sidebar').style.right = '0';
+        }
+
+        function closeCart() {
+            document.getElementById('cart-sidebar').style.right = '-300px';
+        }
+    </script>
+</body>
+
+</html>

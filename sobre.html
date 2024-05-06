@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Colorful Modern Infinity Technology Free Logo.png" type="image/x-icon">
+    <title>Infinity tech</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #000, #048beba9, #048beba9);
+        }
+
+        .logo img {
+            width: 300px;
+        }
+
+        .perfil {
+            position: absolute;
+            left: 1700px;
+            top: 80px;
+            /* Ajuste conforme necessário */
+            z-index: 9999;
+            /* Para garantir que a imagem fique sobre o vídeo */
+            cursor: pointer;
+        }
+
+        #nav-test {
+            background: transparent;
+            margin-left: -1590px;
+            margin-top: -120px;
+            /* Cor de fundo do menu */
+            font-size: 20px;
+            font-family: 'calibri';
+        }
+
+        #nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .nav-li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        .nav-li a {
+            text-decoration: none;
+            color: #fff;
+            /* Cor do texto do menu */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-li a:hover {
+            background-color: #004c99ac;
+            /* Cor de fundo do menu ao passar o mouse */
+        }
+
+        .active-nav a {
+            background-color: #004c99ac;
+            /* Cor de fundo do menu da página atual */
+        }
+
+        ul {
+            display: flex;
+        }
+
+        .titulo1 {
+            position: absolute;
+            top: 120px;
+            left: 600px;
+            font-size: 90px;
+            font-family: 'calibri';
+            color: rgb(240, 240, 240);
+        }
+
+        .texto1 {
+            position: absolute;
+            top: 420px;
+            left: 200px;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            width: 1500px;
+            font-family: 'Calibri';
+            text-align: justify;
+        }
+
+        .titulo2 {
+            position: relative;
+            top: 530px;
+            color: white;
+            font-size: 90px;
+            font-family: 'calibri';
+        }
+
+
+        .card {
+            position: absolute;
+            top: 1200px;
+            left: 1250px;
+            width: 190px;
+            height: 234px;
+            background: rgb(255, 255, 255);
+            transition: all 0.4s;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            font-size: 30px;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+
+        .card:hover {
+            border-radius: 15px;
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            background: rgb(255, 253, 253);
+        }
+
+        .first-content {
+            height: 240px;
+            width: 100%;
+            transition: all 0.4s;
+            opacity: 1;
+            border-radius: 15px;
+            margin-left: 14px;
+            font-family: 'calibri';
+            font-size: 20px;
+        }
+
+        .card:hover .first-content {
+            height: 0px;
+            opacity: 0;
+        }
+
+        .second-content {
+            height: 0%;
+            width: 100%;
+            opacity: 0;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            font-size: 10px;
+            transform: rotate(90deg) scale(-1);
+        }
+
+        .card:hover .second-content {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+
+        #imagemAnao {
+            position: relative;
+            top: 12px;
+            border-radius: 20px;
+        }
+
+        .p {
+            font-size: 15px;
+            font-family: 'calibri';
+            color: #000;
+        }
+
+        .card2 {
+            position: absolute;
+            top: 1200px;
+            left: 830px;
+            width: 190px;
+            height: 234px;
+            background: rgb(255, 255, 255);
+            transition: all 0.4s;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            font-size: 30px;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+
+        .card2:hover {
+            border-radius: 15px;
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            background: rgb(255, 253, 253);
+        }
+
+        .first-content2 {
+            height: 240px;
+            width: 100%;
+            transition: all 0.4s;
+            opacity: 1;
+            border-radius: 15px;
+            margin-left: 14px;
+            font-family: 'calibri';
+            font-size: 20px;
+        }
+
+        .card2:hover .first-content2 {
+            height: 0px;
+            opacity: 0;
+        }
+
+        .second-content2 {
+            height: 0%;
+            width: 100%;
+            opacity: 0;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            font-size: 10px;
+            transform: rotate(90deg) scale(-1);
+        }
+
+        .card2:hover .second-content2 {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+
+        #imagemArthur {
+            position: relative;
+            top: 12px;
+            border-radius: 20px;
+        }
+
+        .p2 {
+            font-size: 15px;
+            font-family: 'calibri';
+            color: #000;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .card3 {
+            position: absolute;
+            top: 1200px;
+            left: 400px;
+            width: 190px;
+            height: 234px;
+            background: rgb(255, 255, 255);
+            transition: all 0.4s;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            font-size: 30px;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+
+        .card3:hover {
+            border-radius: 15px;
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            background: rgb(255, 253, 253);
+        }
+
+        .first-content3 {
+            height: 240px;
+            width: 100%;
+            transition: all 0.4s;
+            opacity: 1;
+            border-radius: 15px;
+            margin-left: 14px;
+            font-family: 'calibri';
+            font-size: 20px;
+        }
+
+        .card3:hover .first-content3 {
+            height: 0px;
+            opacity: 0;
+        }
+
+        .second-content3 {
+            height: 0%;
+            width: 100%;
+            opacity: 0;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            font-size: 10px;
+            transform: rotate(90deg) scale(-1);
+        }
+
+        .card3:hover .second-content3 {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+
+        .p3 {
+            font-size: 15px;
+            font-family: 'calibri';
+            color: #000;
+        }
+
+
+        .card4 {
+            position: absolute;
+            top: 1600px;
+            left: 400px;
+            width: 190px;
+            height: 234px;
+            background: rgb(255, 255, 255);
+            transition: all 0.4s;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            font-size: 30px;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+
+        .card4:hover {
+            border-radius: 15px;
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            background: rgb(255, 253, 253);
+        }
+
+        .first-content4 {
+            height: 240px;
+            width: 100%;
+            transition: all 0.4s;
+            opacity: 1;
+            border-radius: 15px;
+            margin-left: 14px;
+            font-family: 'calibri';
+            font-size: 20px;
+        }
+
+        .card4:hover .first-content4 {
+            height: 0px;
+            opacity: 0;
+        }
+
+        .second-content4 {
+            height: 0%;
+            width: 100%;
+            opacity: 0;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            font-size: 10px;
+            transform: rotate(90deg) scale(-1);
+        }
+
+        .card4:hover .second-content4 {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+
+        .p4 {
+            font-size: 15px;
+            font-family: 'calibri';
+            color: #000;
+        }
+
+
+        .card5 {
+            position: absolute;
+            top: 1600px;
+            left: 830px;
+            width: 190px;
+            height: 234px;
+            background: rgb(255, 255, 255);
+            transition: all 0.4s;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            font-size: 30px;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+
+        .card5:hover {
+            border-radius: 15px;
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            background: rgb(255, 253, 253);
+        }
+
+        .first-content5 {
+            height: 240px;
+            width: 100%;
+            transition: all 0.4s;
+            opacity: 1;
+            border-radius: 15px;
+            margin-left: 14px;
+            font-family: 'calibri';
+            font-size: 20px;
+        }
+
+        .card5:hover .first-content5 {
+            height: 0px;
+            opacity: 0;
+        }
+
+        .second-content5 {
+            height: 0%;
+            width: 100%;
+            opacity: 0;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            font-size: 10px;
+            transform: rotate(90deg) scale(-1);
+        }
+
+        .card5:hover .second-content5 {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+
+        .p5 {
+            font-size: 15px;
+            font-family: 'calibri';
+            color: #000;
+        }
+
+
+        .card6 {
+            position: absolute;
+            top: 1600px;
+            left: 1250px;
+            width: 190px;
+            height: 234px;
+            background: rgb(255, 255, 255);
+            transition: all 0.4s;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            font-size: 30px;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+
+        .card6:hover {
+            border-radius: 15px;
+            cursor: pointer;
+            transform: scale(1.2);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+            background: rgb(255, 253, 253);
+        }
+
+        .first-content6 {
+            height: 240px;
+            width: 100%;
+            transition: all 0.4s;
+            opacity: 1;
+            border-radius: 15px;
+            margin-left: 14px;
+            font-family: 'calibri';
+            font-size: 20px;
+        }
+
+        .card6:hover .first-content6 {
+            height: 0px;
+            opacity: 0;
+        }
+
+        .second-content6 {
+            height: 0%;
+            width: 100%;
+            opacity: 0;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.4s;
+            font-size: 10px;
+            transform: rotate(90deg) scale(-1);
+        }
+
+        .card6:hover .second-content6 {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+
+        .p6 {
+            font-size: 15px;
+            font-family: 'calibri';
+            color: #000;
+        }
+
+        .fundo {
+            position: absolute;
+            top: 2000px;
+            width: 1894px;
+            height: 200px;
+            background-color: #00000088;
+        }
+
+        .tit {
+            position: absolute;
+            top: 1990px;
+            left: 700px;
+            font-size: 20px;
+            font-family: 'calibre';
+            color: rgba(255, 255, 255, 0.829);
+        }
+
+        .whats {
+            position: absolute;
+            top: 2100px;
+            left: 400px;
+            color: white;
+            font-family: 'calibre';
+            font-size: 20px;
+        }
+
+        .insta {
+            position: absolute;
+            top: 2100px;
+            left: 820px;
+            color: white;
+            font-family: 'calibre';
+            font-size: 20px;
+        }
+
+        .email {
+            position: absolute;
+            top: 2100px;
+            left: 1220px;
+            color: white;
+            font-family: 'calibre';
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <a href="pagina-principal.html">
+            <img src="logo1.png" alt="logo">
+        </a>
+    </div>
+    <div class="perfil">
+        <a href="index.html">
+            <img src="perfil.png" width="70px">
+        </a>
+        <section id="nav-test">
+            <div id="nav-container">
+                <ul>
+                    <li class="nav-li"><a href="pagina-principal.html">Inicio</a></li>
+                    <li class="nav-li"><a href="inicio.html">Produtos</a></li>
+                    <li class="nav-li  active-nav"><a>Sobre</a></li>
+                    <li class="nav-li"><a href="ajuda.html">Ajuda</a></li>
+                </ul>
+                <div id="line"></div>
+            </div>
+        </section>
+    </div>
+
+    <div class="titulo1">
+        <p>Sobre o nosso site</p>
+    </div>
+
+    <div class="texto1">
+        <p>
+            Seja bem-vindo ao seu destino definitivo para periféricos de alta qualidade! Na nossa loja, você encontrará
+            uma ampla gama de acessórios e dispositivos que irão transformar a sua experiência de computação. Dos mais
+            avançados teclados mecânicos projetados para precisão e conforto, aos mouses ergonômicos que proporcionam
+            controle excepcional em cada clique, até os headsets com áudio imersivo que levam você diretamente para o
+            centro da ação nos seus jogos favoritos. <br><br>
+            Nossa seleção cuidadosamente curada apresenta apenas produtos das melhores marcas, garantindo durabilidade,
+            desempenho e estilo. Além disso, estamos sempre atualizados com as últimas tendências e tecnologias do
+            mercado, para que você possa estar um passo à frente em termos de funcionalidade e inovação.
+            Explore nossas categorias para encontrar exatamente o que você precisa para otimizar o seu setup. Quer
+            esteja buscando melhorar a produtividade no trabalho, maximizar a precisão nos seus jogos ou simplesmente
+            elevar o seu entretenimento multimídia para um novo patamar, nós temos a solução perfeita para você.
+            <br><br>
+            Compre agora e descubra como nossos periféricos podem transformar a sua maneira de interagir com o seu
+            computador. Estamos aqui para ajudá-lo a encontrar os acessórios ideais que se encaixam perfeitamente no seu
+            estilo de vida digital. Vamos juntos elevar a sua experiência computacional a um novo patamar de excelência!
+        </p>
+
+    </div>
+    <div class="titulo2">
+        <center>
+            <p>Quem somos?</p>
+        </center>
+    </div>
+
+
+    <div class="card">
+        <div class="first-content">
+            <div id="imagemAnao">
+                <img src="emanuel.jpg" alt="" width="85%" height="60%">
+            </div>
+            <p>Emanuel Tonis Florz Filho</p>
+        </div>
+        <div class="second-content">
+            <div class="p">
+                <center>
+                    <h2>Contato:</h2>
+                </center>
+                <center><a href="">
+                        <p>Instagram: no3lzin_</p>
+                    </a></center>
+                <center>
+                    <p>WhatsApp: 99711-8735</p>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card2">
+        <div class="first-content2">
+            <div id="imagemArthur">
+                <img src="arthur.jpg" alt="" width="160px" height="150px">
+            </div>
+            <p>Arthur Henrique Pereira</p>
+        </div>
+        <div class="second-content2">
+            <div class="p2">
+                <center>
+                    <h2>Contato:</h2>
+                </center>
+                <center><a href="">
+                        <p>Instagram: arth_hp</p>
+                    </a></center>
+                <center>
+                    <p>WhatsApp: 99941-9746</p>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card3">
+        <div class="first-content3">
+            <div id="imagemArthur">
+                <img src="Ana.jpg" alt="" width="160px" height="150px">
+            </div>
+            <p>Ana Clara Rottini Engels</p>
+        </div>
+        <div class="second-content3">
+            <div class="p3">
+                <center>
+                    <h2>Contato:</h2>
+                </center>
+                <center><a href="">
+                        <p>Instagram: anarttn</p>
+                    </a></center>
+                <center>
+                    <p>WhatsApp: 99632-6722</p>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card4">
+        <div class="first-content4">
+            <div id="imagemArthur">
+                <img src="pacheco.jpg" alt="" width="160px" height="150px">
+            </div>
+            <p>Lucas Silva Pacheco</p>
+        </div>
+        <div class="second-content4">
+            <div class="p4">
+                <center>
+                    <h2>Contato:</h2>
+                </center>
+                <center><a href="">
+                        <p>Instagram: I_pacheco__</p>
+                    </a></center>
+                <center>
+                    <p>WhatsApp: 98866-4040</p>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card5">
+        <div class="first-content5">
+            <div id="imagemArthur">
+                <img src="winter.jpg" alt="" width="160px" height="150px">
+            </div>
+            <p>Matheus Winter</p>
+        </div>
+        <div class="second-content5">
+            <div class="p5">
+                <center>
+                    <h2>Contato:</h2>
+                </center>
+                <center><a href="">
+                        <p>Instagram: Matheus Winter</p>
+                    </a></center>
+                <center>
+                    <p>WhatsApp: 99190-3774</p>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card6">
+        <div class="first-content6">
+            <div id="imagemArthur">
+                <img src="cani.jpg" alt="" width="160px" height="150px">
+            </div>
+            <p>Victhor Vilson Klipp Cani</p>
+        </div>
+        <div class="second-content6">
+            <div class="p6">
+                <center>
+                    <h2>Contato:</h2>
+                </center>
+                <center><a href="">
+                        <p>Instagram: victhorcani</p>
+                    </a></center>
+                <center>
+                    <p>WhatsApp: 99986-1467</p>
+                </center>
+            </div>
+        </div>
+</body>
+
+</html>
